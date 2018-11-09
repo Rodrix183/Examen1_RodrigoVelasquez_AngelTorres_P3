@@ -17,9 +17,9 @@ Item::Item(){
     
     direccionI = 1;
     tablero = NULL;
-    bloque = NULL;
-    plataforma = NULL;
-    bola = NULL;
+    bloque = 'x';
+    plataforma = 'p';
+    bola = 'b';
     
 }
 
@@ -42,7 +42,7 @@ Item*** Item::crearTablero(){
     return tablero;
 }
 
-void Item::llenar(Item*** tablero){
+void Item::llenar(){
     for(int i =0; i < 10;i++){
         for(int j = 0;j < 10;j++){
             if(i == 0){//blanco
@@ -76,7 +76,7 @@ void Item::llenar(Item*** tablero){
     }
 }
 
-void Item::print(Item*** matriz){
+void Item::print(){
 
     for(int i = 0; i < 10; i++){
         for(int j = 0; j < 10; ){

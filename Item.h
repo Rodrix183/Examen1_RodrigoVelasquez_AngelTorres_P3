@@ -3,7 +3,7 @@
 
 #define SIZE 10
 
-class Item(){
+class Item{
     
     private: 
         int plataforma;
@@ -23,18 +23,18 @@ class Item(){
         
         //direccion
         int direccionI;
-        Item*** tablero;
-        Item bloque;
-        Item plataforma;
-        Item bola;
+        char*** tablero;
+        char bloque;
+        //char plataforma;
+        char bola;
          
     public:
         Item();
         ~Item();
         
-        int*** crearTablero();
-        void llenar(Item***);
-        void print(Item***);
+        Item*** crearTablero();
+        void llenar();
+        void print();
         void liberar();
 
         void mover(int);
