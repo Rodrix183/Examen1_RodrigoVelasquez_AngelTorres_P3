@@ -2,6 +2,24 @@
 #include "ncurses.h"
 
 Item::Item(){
+    plataforma = 0;
+    vidas = 0;
+    golpes = 0;
+
+    x1Bar = 3;
+    x2Bar = 4;
+    x3Bar = 5;
+    x4Bar = 6;
+    yBar = 9;
+
+    xBall = 8;
+    yBall = 5;
+    
+    direccionI = 1;
+    tablero = NULL;
+    bloque = NULL;
+    plataforma = NULL;
+    bola = NULL;
     
 }
 
@@ -71,17 +89,46 @@ void Item::print(Item*** matriz){
 
 }
 void Item::mover(int c){
-    if(c==97 && x1Bar>= 0){
+    if(c==97 && x1Bar>= 0){//izquierda
         x1Bar-=1;
         x2Bar-=1;
         x3Bar-=1;
         x4Bar-=1;
-    }else if(c==100 && x4Bar<=9){
+        direccionI = 1;
+        
+    }else if(c==100 && x4Bar<=9){//derecha
         x1Bar+=1;
         x2Bar+=1;
         x3Bar+=1;
         x4Bar+=1;
+        direccionI = 2;
+
     }else{
         //no hace nada
     }
+
 }
+
+void Item::liberar(Item*** matriz){
+    for(int i = 0; i < 10; i++){
+        for(int j = 0; j < 10; j++){
+            delete[] matriz;
+            matriz[i][j]=NULL;
+        }
+        
+    }
+    for(int i = 0; i <10; i++){
+        delete[] matriz;
+        matriz[i]= NULL;
+    }
+
+    delete[] matriz;
+    matriz = NULL;
+}
+
+/*void Item::iniciar(){
+    bool vive = true;
+    do{
+        
+    }while(vive);
+}*/

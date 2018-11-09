@@ -21,6 +21,8 @@ class Item(){
         int xBall;
         int yBall;
         
+        //direccion
+        int direccionI;
         Item*** tablero;
         Item bloque;
         Item plataforma;
@@ -36,7 +38,7 @@ class Item(){
         void liberar();
 
         void mover(int);
-        void iniciar();
+        //void iniciar();
 
         //void pelota(Item***, int,int);
 };
