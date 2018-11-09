@@ -11,10 +11,11 @@ class Item{
         int golpes;
         int px;
         int py; 
-        int size;   
+       
         int nivel;
         char tipo;
-     
+    
+        char** tablero; 
         /*
         //posiciones en x y de la barra
         int x1Bar;
@@ -37,11 +38,30 @@ class Item{
     public:
         //Constructores
         Item();
-        //tablero, golpes, px, py, nivel, tipo
-        Item(char**, int, int, int, int, char);        
+        //vidas, golpes, px, py, nivel, tipo
+        Item( int, int, int, int, int, char);        
         
         //Destructor
         ~Item();
+
+        //Accesores y mutadores
+        void setGolpe(int);
+        int getGolpe();
+
+        void setX(int);
+        int getX();
+
+        void setY(int);
+        int getY();
+
+        void setNivel(int);
+        int getNivel();
+
+        void setTipo(char);
+        char getTipo();
+        
+        void setVida(int);
+        int getVida();        
         
         Item*** crearTablero();
         void llenar();

@@ -2,29 +2,28 @@
 #include "ncurses.h"
 
 Item::Item(){
-    //plataforma = 0;
-    vidas = 0;
-    golpes = 0;
-
-    x1Bar = 3;
-    x2Bar = 4;
-    x3Bar = 5;
-    x4Bar = 6;
-    yBar = 9;
-
-    xBall = 8;
-    yBall = 5;
     
-    direccionI = 1;
-    tablero = NULL;
-    bloque = 'x';
-    plataforma = 'p';
-    bola = 'b';
-    
+    this->vidas = 4;
+    this->golpes =0;
+    this->px = 0;
+    this->py = 0;
+    this->nivel = 0;
+    this->tipo = ' ';    
+    this->tablero = NULL;
 }
 
 Item::~Item(){
+    liberar();
+}
 
+
+Item::Item(int vidas , int golpes, int px, int py, int nivel, char tipo){
+    this->vidas = vidas;
+    this->golpes = golpes;
+    this->px = px;
+    this->py = py;
+    this->nivel = nivel;
+    this->tipo = tipo;
 }
 
 
@@ -44,7 +43,7 @@ Item*** Item::crearTablero(){
 }
 
 void Item::llenar(){
-    for(int i =0; i < 10;i++){
+    /*for(int i =0; i < 10;i++){
         for(int j = 0;j < 10;j++){
             if(i == 0){//blanco
                 tablero[i][j] = 'B';
@@ -74,7 +73,7 @@ void Item::llenar(){
                 tablero[i][j] = ' ';
             }
         }
-    }
+    }*/
 }
 
 void Item::print(){
@@ -90,6 +89,7 @@ void Item::print(){
 */
 }
 void Item::mover(int c){
+    /*
     if(c==97 && x1Bar>= 0){//izquierda
         x1Bar-=1;
         x2Bar-=1;
@@ -107,7 +107,7 @@ void Item::mover(int c){
     }else{
         //no hace nada
     }
-
+*/
 }
 
 void Item::liberar(){
