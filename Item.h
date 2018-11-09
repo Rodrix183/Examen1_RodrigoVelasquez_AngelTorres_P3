@@ -10,6 +10,19 @@ class Item(){
         int vidas;
         int golpes; 
         
+        //posiciones en x y de la barra
+        int x1Bar;
+        int x2Bar;
+        int x3Bar;
+        int x4Bar;
+        int yBar;
+
+        //posiciones en x y de la pelota
+        int xBall;
+        int yBall;
+        
+        //direccion
+        int direccionI;
         Item*** tablero;
         Item bloque;
         Item plataforma;
@@ -20,14 +33,14 @@ class Item(){
         ~Item();
         
         int*** crearTablero();
-        void llenarTablero();
-        void imprimirTablero();
+        void llenar(Item***);
+        void print(Item***);
         void liberar();
 
-        void mover();
-        void iniciar();
+        void mover(int);
+        //void iniciar();
 
-        void pelota(Item***, int,int);
+        //void pelota(Item***, int,int);
 };
 
 #endif
