@@ -17,8 +17,8 @@ int main(int argc, char** argv){
 
     height = 10;
     width = 10;
-    starty = (LINES - height) / 2;
-    startx = (LINES - width) / 2;
+    starty = 10;/* (LINES - height) / 2;*/
+    startx =10;/* (LINES - width) / 2;*/
     printw("Hello world\n");  
     refresh();
 
@@ -66,6 +66,8 @@ int main(int argc, char** argv){
     return 0;
 }
 
+
+//Crear la ventana
 WINDOW* create_newwin(int height, int width, int starty, int startx){
     WINDOW* local_win;
     local_win = newwin(height, width, starty, startx);
