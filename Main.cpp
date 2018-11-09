@@ -67,6 +67,7 @@ int main(int argc, char** argv){
                 resp = 4;
             
         }//Final switch
+        mvprintw(40,40,"Game_Over");
     }while(resp!=4);
 
     endwin();
