@@ -7,15 +7,17 @@ void destroy_win(WINDOW *local_win);
 
 int main(int argc, char** argv){    
     
+    string nombre = "";
     WINDOW *my_win;
     int startx, starty, width, height;
     int ch;
     keypad(stdscr, TRUE);
-    
+    cout<<"Ingrese nombre";
+    cin>>nombre;
     //Inicia ncurses
     initscr();
     cbreak();
-
+    
     height = 10;
     width = 10;
     starty = 10;/* (LINES - height) / 2;*/
