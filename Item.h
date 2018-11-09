@@ -9,8 +9,12 @@ class Item(){
         int plataforma;
         int vidas;
         int golpes; 
+        
         Item*** tablero;
- 
+        Item bloque;
+        Item plataforma;
+        Item bola;
+         
     public:
         Item();
         ~Item();
@@ -22,6 +26,8 @@ class Item(){
 
         void mover();
         void iniciar();
+
+        void pelota(Item***, int,int);
 };
 
 #endif
