@@ -6,15 +6,21 @@
 class Item{
     
     private: 
-        int plataforma;
+        
         int vidas;
-        int golpes; 
+        int golpes;
+        int px;
+        int py; 
+        int size;   
+        int nivel;
+        int tipo;
+     
         
         //posiciones en x y de la barra
         int x1Bar;
         int x2Bar;
-        int x3Bar;
-        int x4Bar;
+        //int x3Bar;
+        //int x4Bar;
         int yBar;
 
         //posiciones en x y de la pelota
@@ -23,7 +29,7 @@ class Item{
         
         //direccion
         int direccionI;
-        char*** tablero;
+        char** tablero;
         char bloque;
         //char plataforma;
         char bola;

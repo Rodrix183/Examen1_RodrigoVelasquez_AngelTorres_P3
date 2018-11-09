@@ -2,7 +2,7 @@
 #include "ncurses.h"
 
 Item::Item(){
-    plataforma = 0;
+    //plataforma = 0;
     vidas = 0;
     golpes = 0;
 
@@ -29,6 +29,7 @@ Item::~Item(){
 
 
 Item*** Item::crearTablero(){
+    
     Item*** tablero = new Item**[10];
     for(int i = 0; i < 10; i++){
         tablero[i]= new Item*[10];
@@ -77,16 +78,16 @@ void Item::llenar(){
 }
 
 void Item::print(){
-
+/*
     for(int i = 0; i < 10; i++){
-        for(int j = 0; j < 10; ){
-            printw(matriz[i][j]);
+        for(int j = 0; j < 10; j++ ){
+            printw(tablero[i][j]);
         }
         move(i,j);
         refresh();
     }
     refresh();
-
+*/
 }
 void Item::mover(int c){
     if(c==97 && x1Bar>= 0){//izquierda
@@ -109,21 +110,23 @@ void Item::mover(int c){
 
 }
 
-void Item::liberar(Item*** matriz){
+void Item::liberar(){
+    /*
     for(int i = 0; i < 10; i++){
         for(int j = 0; j < 10; j++){
-            delete[] matriz;
-            matriz[i][j]=NULL;
+            delete[] tablero;
+            tablero[i][j]=NULL;
         }
         
     }
     for(int i = 0; i <10; i++){
-        delete[] matriz;
-        matriz[i]= NULL;
+        delete[] tablero;
+        tablero[i]= NULL;
     }
 
-    delete[] matriz;
-    matriz = NULL;
+    delete[] tablero;
+    tablero = NULL;
+    */
 }
 
 /*void Item::iniciar(){
