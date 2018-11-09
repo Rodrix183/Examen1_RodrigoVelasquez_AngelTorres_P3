@@ -1,9 +1,12 @@
-#include "Item.h"
+//#include "Item.h"
 #include <ncurses.h>
+#include <iostream>
 
+using namespace std;
 
 WINDOW *create_newwin(int height, int width, int starty, int startx);
 void destroy_win(WINDOW *local_win);
+
 
 int main(int argc, char** argv){    
     
@@ -48,6 +51,7 @@ int main(int argc, char** argv){
         //<<"4. Salir"<<endl
         //<<"Ingrese opcion "<<endl;
         resp = getch();
+        printw("Bienvenido ",nombre);
         switch(resp){
             case 1:{//Nivel 1
 
