@@ -13,9 +13,9 @@ class Item{
         int py; 
         int size;   
         int nivel;
-        int tipo;
+        char tipo;
      
-        
+        /*
         //posiciones en x y de la barra
         int x1Bar;
         int x2Bar;
@@ -33,9 +33,14 @@ class Item{
         char bloque;
         //char plataforma;
         char bola;
-         
+         */
     public:
+        //Constructores
         Item();
+        //tablero, golpes, px, py, nivel, tipo
+        Item(char**, int, int, int, int, char);        
+        
+        //Destructor
         ~Item();
         
         Item*** crearTablero();
