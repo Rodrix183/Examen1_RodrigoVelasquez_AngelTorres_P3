@@ -15,7 +15,7 @@ int main(int argc, char** argv){
     int startx, starty, width, height;
     int ch;
     keypad(stdscr, TRUE);
-    cout<<"Ingrese nombre";
+    cout<<"Ingrese nombre"<<endl;
     cin>>nombre;
     //Inicia ncurses
     initscr();
@@ -28,9 +28,9 @@ int main(int argc, char** argv){
     printw("Hello world\n");  
     refresh();
 
-    my_win = create_newwin(height, width, starty, startx);
+    //my_win = create_newwin(height, width, starty, startx);
    
-    while((ch = getch()) != KEY_F(1)){
+   /* while((ch = getch()) != KEY_F(1)){
         switch(ch){
             case KEY_LEFT:
                 destroy_win(my_win);
@@ -41,15 +41,15 @@ int main(int argc, char** argv){
                 my_win = create_newwin(height, width, starty, ++startx);
                 break;
         }
-    }
+    }*/
  
     int resp = 0;
     do{
-        printw("1. Nivel 1");
-        //<<"2. Nivel 2"<<endl
-        //<<"3. Nivel 3"<<endl
-        //<<"4. Salir"<<endl
-        //<<"Ingrese opcion "<<endl;
+        printw("1. Nivel 1\n");
+        printw("2. Nivel 2\n");
+        printw("3. Nivel 3\n");
+        printw("4. Salir\n");
+        printw("Ingrese opcion ");
         resp = getch();
         printw("Bienvenido ",nombre);
         switch(resp){
@@ -76,7 +76,7 @@ int main(int argc, char** argv){
 
 
 //Crear la ventana
-WINDOW* create_newwin(int height, int width, int starty, int startx){
+/*WINDOW* create_newwin(int height, int width, int starty, int startx){
     WINDOW* local_win;
     local_win = newwin(height, width, starty, startx);
     box(local_win,0,0);
@@ -89,4 +89,4 @@ void destroy_win(WINDOW* local_win){
 
     wrefresh(local_win);
     delwin(local_win);
-}
+}*/
