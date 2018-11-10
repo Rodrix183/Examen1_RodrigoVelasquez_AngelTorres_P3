@@ -1,4 +1,4 @@
-//#include "Item.h"
+#include "Item.h"
 #include <ncurses.h>
 #include <iostream>
 
@@ -9,8 +9,12 @@ void destroy_win(WINDOW *local_win);
 
 
 int main(int argc, char** argv){    
-    
+    bool vive = true;
     string nombre = "";
+    int lvl = 1;//lvl1 por defecto
+    //instancia de Item
+    Item* it = new Item();
+ 
     WINDOW *my_win;
     int startx, starty, width, height;
     int ch;
@@ -45,6 +49,7 @@ int main(int argc, char** argv){
  
     int resp = 0;
     char car = ' ';
+    printw("Bienvenido\n");
     do{
         printw("1. Nivel 1\n");
         printw("2. Nivel 2\n");
@@ -52,23 +57,40 @@ int main(int argc, char** argv){
         printw("4. Salir\n");
         printw("Ingrese opcion \n");
         resp = getch()-'0';
-        printw("Bienvenido \n");
+        //printw("Bienvenido \n");
         switch(resp){
             case 1:{//Nivel 1
-                printw("lvl1\n");
+                printw("------------lvl1------------\n");
+                //iniciar();
+                it->setNivel(1);
+                /*while(vive == true){
+                //vive = iniciar();
+                }*/
             }break;
+
             case 2:{//Nivel 2
-                printw("lvl2\n");
+                printw("------------lvl2------------\n");
+                it->setNivel(2);
+                //it->iniciar();
+                /*while(vive == true){
+                //vive = iniciar();
+                }*/
             }break;
+
             case 3:{//Nivel 3
-                printw("lvl3\n");
+                printw("------------lvl3------------\n");
+                it->setNivel(3);
+                //it->iniciar();
+                /*while(vive == true){
+                //vive = iniciar();
+                }*/
             }break;
+
             default:
-                //cout << "Saliendo.." << endl;
-                resp = 4;
-            
+                //printw("Saliendo...\n");
+                resp = 4;            
         }//Final switch
-        mvprintw(10,10,"Game_Over2\n");
+        mvprintw(10,10,"Game_Over\n");
     }while(resp!=4);
     refresh();
     endwin();
