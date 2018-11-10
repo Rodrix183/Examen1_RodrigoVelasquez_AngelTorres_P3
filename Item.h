@@ -17,25 +17,7 @@ class Item{
     
         char** tablero; 
         Item*** matrix;
-        /*
-        //posiciones en x y de la barra
-        int x1Bar;
-        int x2Bar;
-        //int x3Bar;
-        //int x4Bar;
-        int yBar;
-
-        //posiciones en x y de la pelota
-        int xBall;
-        int yBall;
         
-        //direccion
-        int direccionI;
-        char** tablero;
-        char bloque;
-        //char plataforma;
-        char bola;
-         */
     public:
         //Constructores
         Item();

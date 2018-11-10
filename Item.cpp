@@ -62,14 +62,11 @@ Item*** Item::llenarMatrix(int nivel){
     //this->nivel = nivel;
     for(int i = 0; i < SIZE; i++){
         for( int j = 0; j < SIZE; j++){
-            if(i <= 3){//lenar bloques
-                matrix[i][j] = new Item(3,0,i,j,nivel,'B');
+            if(i <= 3 && j == 0){//lenar bloques
+                this->matrix[i][j] = new Item(3,0,i,j,nivel,'B');
             }
             if(i>3){//espacio vacio
-                matrix[i][j] = new Item(3,0,i,j,nivel, ' ' );
-            }
-            if( i ==9 && j>=3 && j<=7 ){
-                matrix[i][j] = new Item(3,0,i,j,nivel,'b');
+                this->matrix[i][j] = new Item(3,0,i,j,nivel, ' ' );
             }
             
         }
@@ -87,7 +84,7 @@ void Item::imprimirMatrix(){
                 std::cout << getTipo() << ' ';
                 attron(COLOR_PAIR(1));
                 mvaddch(j,i,'x');
-                std::cout << "B";
+                //std::cout << "B";
                 refresh();
             }else{
                 //std::cout << std::endl;
@@ -180,22 +177,22 @@ void Item::mover(int c){
 
 
 void Item::liberar(){
-    /*
+    
     for(int i = 0; i < 10; i++){
         for(int j = 0; j < 10; j++){
-            delete[] tablero;
-            tablero[i][j]=NULL;
+            delete[] matrix;
+            matrix[i][j]=NULL;
         }
         
     }
     for(int i = 0; i <10; i++){
-        delete[] tablero;
-        tablero[i]= NULL;
+        delete[] matrix;
+        matrix[i]= NULL;
     }
 
-    delete[] tablero;
-    tablero = NULL;
-    */
+    delete[] matrix;
+    matrix = NULL;
+    
 }
 
 /*void Item::iniciar(){
