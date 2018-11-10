@@ -14,7 +14,7 @@ int main(int argc, char** argv){
     int lvl = 1;//lvl1 por defecto
     //instancia de Item
     Item* it = new Item();
- 
+     
     WINDOW *my_win;
     int startx, starty, width, height;
     int ch;
@@ -24,7 +24,7 @@ int main(int argc, char** argv){
     //Inicia ncurses
     initscr();
     cbreak();
-    
+    noecho();
     height = 10;
     width = 10;
     starty = 10;/* (LINES - height) / 2;*/
@@ -48,6 +48,7 @@ int main(int argc, char** argv){
     }*/
  
     int resp = 0;
+    //int pto = 0;
     char car = ' ';
     printw("Bienvenido\n");
     do{

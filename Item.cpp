@@ -1,5 +1,8 @@
 #include "Item.h"
-//#include "ncurses.h"
+#include <iostream>
+#include "ncurses.h"
+
+using namespace std;
 
 Item::Item(){
     
@@ -9,7 +12,7 @@ Item::Item(){
     this->py = 0;
     this->nivel = 0;
     this->tipo = ' ';    
-    this->tablero = nullptr;
+    this->tablero = NULL;
 }
 
 Item::~Item(){
@@ -36,7 +39,7 @@ Item*** Item::crearTablero(){
 
     for(int i = 0; i<10; i++){
         for(int j = 0; j < 10; j++){
-            tablero[i][j]= nullptr;
+            tablero[i][j]= NULL;
         }
     }
     return tablero;
