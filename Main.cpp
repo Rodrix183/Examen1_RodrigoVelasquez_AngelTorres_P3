@@ -25,8 +25,8 @@ int main(int argc, char** argv){
     width = 10;
     starty = 10;/* (LINES - height) / 2;*/
     startx =10;/* (LINES - width) / 2;*/
-    printw("Hello world\n");  
-    refresh();
+    //printw("Hello world\n");  
+    //refresh();
 
     //my_win = create_newwin(height, width, starty, startx);
    
@@ -44,32 +44,33 @@ int main(int argc, char** argv){
     }*/
  
     int resp = 0;
+    char car = ' ';
     do{
         printw("1. Nivel 1\n");
         printw("2. Nivel 2\n");
         printw("3. Nivel 3\n");
         printw("4. Salir\n");
-        printw("Ingrese opcion ");
-        resp = getch();
-        printw("Bienvenido ",nombre);
+        printw("Ingrese opcion \n");
+        resp = getch()-'0';
+        printw("Bienvenido \n");
         switch(resp){
             case 1:{//Nivel 1
-
+                printw("lvl1\n");
             }break;
             case 2:{//Nivel 2
-
+                printw("lvl2\n");
             }break;
             case 3:{//Nivel 3
-
+                printw("lvl3\n");
             }break;
             default:
                 //cout << "Saliendo.." << endl;
                 resp = 4;
             
         }//Final switch
-        mvprintw(40,40,"Game_Over");
+        mvprintw(10,10,"Game_Over2\n");
     }while(resp!=4);
-
+    refresh();
     endwin();
     return 0;
 }
