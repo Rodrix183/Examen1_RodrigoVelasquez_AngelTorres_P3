@@ -1,14 +1,7 @@
 #include "Item.h"
-<<<<<<< HEAD
-#include <iostream>
-#include "ncurses.h"
-
-using namespace std;
-=======
-#include "ncurses.h"
 
 #include <iostream>
->>>>>>> dfa1bf1d252737cc5e0448363cb54c546e4ea8c7
+#include "ncurses.h"
 
 Item::Item(){
     
@@ -18,12 +11,8 @@ Item::Item(){
     this->py = 0;
     this->nivel = 0;
     this->tipo = ' ';    
-<<<<<<< HEAD
-    this->tablero = NULL;
-=======
     this->tablero = nullptr;
     this->matrix = nullptr;
->>>>>>> dfa1bf1d252737cc5e0448363cb54c546e4ea8c7
 }
 
 Item::~Item(){
