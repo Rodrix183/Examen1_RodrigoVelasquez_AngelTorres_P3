@@ -16,6 +16,7 @@ class Item{
         char tipo;
     
         char** tablero; 
+        Item*** matrix;
         /*
         //posiciones en x y de la barra
         int x1Bar;
@@ -64,6 +65,12 @@ class Item{
         int getVida();        
         
         Item*** crearTablero();
+        
+        Item*** createMatrix();
+        Item*** llenarMatrix(int); //nivel
+        void imprimirMatrix();
+        void freeup();        
+
         void llenar();
         void print();
         void liberar();
