@@ -1,5 +1,5 @@
 #include "Item.h"
-//#include "ncurses.h"
+#include "ncurses.h"
 
 #include <iostream>
 
@@ -78,11 +78,17 @@ Item*** Item::llenarMatrix(int nivel){
 }
 
 void Item::imprimirMatrix(){
-   for( int i= 0; i < SIZE; i++){
+    start_color();
+    init_pair(1,COLOR_BLUE,COLOR_RED);    
+
+    for( int i= 0; i < SIZE; i++){
         for(int j = 0; j < SIZE; j++){
             if(matrix[i][j]->getTipo() == 'B'){
                 std::cout << getTipo() << ' ';
+                attron(COLOR_PAIR(1));
+                mvaddch(j,i,'x');
                 std::cout << "B";
+                refresh();
             }else{
                 //std::cout << std::endl;
             }
