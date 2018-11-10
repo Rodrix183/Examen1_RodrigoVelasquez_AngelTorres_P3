@@ -1,15 +1,15 @@
 #include "Item.h"
-#include "ncurses.h"
+//#include "ncurses.h"
 
 Item::Item(){
     
-    this->vidas = 4;
+    this->vidas = 3;
     this->golpes =0;
     this->px = 0;
     this->py = 0;
     this->nivel = 0;
     this->tipo = ' ';    
-    this->tablero = NULL;
+    this->tablero = nullptr;
 }
 
 Item::~Item(){
@@ -36,7 +36,7 @@ Item*** Item::crearTablero(){
 
     for(int i = 0; i<10; i++){
         for(int j = 0; j < 10; j++){
-            tablero[i][j]= NULL;
+            tablero[i][j]= nullptr;
         }
     }
     return tablero;
@@ -135,3 +135,48 @@ void Item::liberar(){
         
     }while(vive);
 }*/
+
+//Mutadores y accesores
+void Item::setGolpe(int golpes){
+    this->golpes = golpes;
+}
+int Item::getGolpe(){
+    return this->golpes;
+}
+ 
+void Item::setX(int px){
+    this->px = px;
+}
+int Item::getX(){
+    return this->px;
+}
+ 
+void Item::setY(int py){
+    this->py = py;
+}
+int Item::getY(){
+    return this->py;
+}
+ 
+void Item::setNivel(int nivel){
+    this->nivel = nivel;
+}
+int Item::getNivel(){
+    return this->nivel;
+}
+ 
+void Item::setTipo(char tipo){
+    this->tipo = tipo;
+}
+char Item::getTipo(){
+    return this->tipo;
+}
+ 
+void Item::setVida(int vidas){
+    this->vidas = vidas;
+}
+
+int Item::getVida(){
+    return this->vidas;
+}
+
