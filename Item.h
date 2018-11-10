@@ -75,7 +75,7 @@ class Item{
         void print();
         void liberar();
 
-        void mover(int);
+        void mover();
         //void iniciar();
 
         //void pelota(Item***, int,int);

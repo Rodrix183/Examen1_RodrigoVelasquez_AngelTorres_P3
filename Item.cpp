@@ -1,14 +1,14 @@
 #include "Item.h"
-<<<<<<< HEAD
+//<<<<<<< HEAD
 #include <iostream>
 #include "ncurses.h"
 
 using namespace std;
-=======
+//=======
 #include "ncurses.h"
 
 #include <iostream>
->>>>>>> dfa1bf1d252737cc5e0448363cb54c546e4ea8c7
+//>>>>>>> dfa1bf1d252737cc5e0448363cb54c546e4ea8c7
 
 Item::Item(){
     
@@ -18,12 +18,12 @@ Item::Item(){
     this->py = 0;
     this->nivel = 0;
     this->tipo = ' ';    
-<<<<<<< HEAD
+//<<<<<<< HEAD
     this->tablero = NULL;
-=======
-    this->tablero = nullptr;
-    this->matrix = nullptr;
->>>>>>> dfa1bf1d252737cc5e0448363cb54c546e4ea8c7
+//=======
+    this->tablero = NULL;
+    this->matrix = NULL;
+//>>>>>>> dfa1bf1d252737cc5e0448363cb54c546e4ea8c7
 }
 
 Item::~Item(){
@@ -164,26 +164,37 @@ void Item::print(){
     refresh();
 */
 }
-void Item::mover(int c){
-    /*
-    if(c==97 && x1Bar>= 0){//izquierda
-        x1Bar-=1;
-        x2Bar-=1;
-        x3Bar-=1;
-        x4Bar-=1;
-        direccionI = 1;
-        
-    }else if(c==100 && x4Bar<=9){//derecha
-        x1Bar+=1;
-        x2Bar+=1;
-        x3Bar+=1;
-        x4Bar+=1;
-        direccionI = 2;
-
-    }else{
-        //no hace nada
-    }
-*/
+void Item::mover(){
+    char c;
+    int x = 8;
+    int y = 3;
+    clear();
+    mvprintw(x,y,"xxxx");
+    refresh();
+    do{
+        c = getch();
+        switch(c){
+            case 'a':{
+                if(y>=1){
+                    y--;
+                    clear();
+                    mvprintw(x,y,"xxxx");
+                    refresh();
+                }                
+            }break;
+            
+            case 'd':{
+                if(y<=9){
+                    y++;
+                    clear();
+                    mvprintw(x,y,"xxxx");
+                    refresh();
+                }
+            }break;
+        }
+        refresh();
+    }while(c!='q');
+    endwin();
 }
 
 

@@ -56,6 +56,7 @@ int main(int argc, char** argv){
         printw("2. Nivel 2\n");
         printw("3. Nivel 3\n");
         printw("4. Salir\n");
+        printw("**La letra q es para salir del juego**\n");
         printw("Ingrese opcion \n");
         resp = getch()-'0';
         //printw("Bienvenido \n");
@@ -64,6 +65,7 @@ int main(int argc, char** argv){
                 printw("------------lvl1------------\n");
                 //iniciar();
                 it->setNivel(1);
+                it->mover();
                 /*while(vive == true){
                 //vive = iniciar();
                 }*/
